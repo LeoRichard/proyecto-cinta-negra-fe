@@ -13,7 +13,7 @@ const INGREDIENT = gql`
 
 const IngredientsQuery = () => {
   return (
-    <div>
+    <div className="mt-5 mb-5">
       <h2>Ingredient List</h2>
       <Query query={INGREDIENT}>
         {
