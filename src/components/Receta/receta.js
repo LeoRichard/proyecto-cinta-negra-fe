@@ -1,6 +1,6 @@
 import React from 'react';
 
-import logo from '../logo.svg';
+import logo from '../../logo.svg';
 
 const Receta = ({ name, difficulty }) => {
   return (
@@ -9,7 +9,7 @@ const Receta = ({ name, difficulty }) => {
       <div className="card-body">
         <h5 className="card-title">{name}</h5>
         <p className="card-text">{difficulty}</p>
-        <a href="#" className="btn btn-primary">Read More</a>
+        <a href="http://google.com" className="btn btn-primary">Read More</a>
       </div>
     </div>
   );

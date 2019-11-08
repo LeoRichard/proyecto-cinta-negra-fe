@@ -13,7 +13,7 @@ const RECETAS = gql`
 
 `;
 
-const RecetasSection = () => {
+const RecetasQuery = () => {
   return (
     <div>
       <h2>Receta List</h2>
@@ -23,13 +23,13 @@ const RecetasSection = () => {
             if (loading) return <p>Loading..</p>
             if (error) return <p>Algo salio mal</p>
 
-            const recetaList = data.getAllRecetas;
             return (
               <div className="container">
               <div className="row">
                 {
-                  recetaList.map(recetaItem => (
+                  data.getAllRecetas.map((recetaItem, index) => (
                     <Receta
+                      key={index}
                       name={recetaItem.name}
                       difficulty={recetaItem.difficulty}
                     />
@@ -45,4 +45,4 @@ const RecetasSection = () => {
   );
 };
 
-export default RecetasSection;
+export default RecetasQuery;

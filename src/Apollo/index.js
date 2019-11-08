@@ -30,7 +30,7 @@ const client = new ApolloClient({
   link: ApolloLink.from([
     onError(({ graphQLErrors, networkError }) => {
       if (graphQLErrors) {
-        graphQLErrors.map(({ message, locations, path, extensions }) => {
+        graphQLErrors.forEach(({ message, locations, path, extensions }) => {
           if (extensions.code === 'UNAUTHENTICATED') {
             localStorage.removeItem('jwt');
             client.resetStore()

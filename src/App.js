@@ -4,7 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 
-import RecetasSection from './components/recetasSection';
+import RecetasSection from './components/Receta/recetasSection';
 
 function App() {
   return (
