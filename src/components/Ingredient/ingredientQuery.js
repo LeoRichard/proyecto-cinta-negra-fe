@@ -23,7 +23,7 @@ const IngredientsQuery = () => {
 
             return (
               <div className="container">
-                <div className="row mt-4 mb-4">
+                <div className="row mt-4 mb-4 justify-content-center">
                   {
                     data.ingredients.map((ingredientItem, index) => (
                       <Ingredient key={index} name={ingredientItem.name} />
