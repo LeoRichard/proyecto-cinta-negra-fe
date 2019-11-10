@@ -28,19 +28,25 @@ const UsersQuery = () => {
               <div className="container">
               <div className="row">
                 <table className="table">
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Active</th>
-                  {
-                    data.users.map((userItem, index) => (
-                      <User
-                        key={index}
-                        name={userItem.name}
-                        email={userItem.email}
-                        isActive={userItem.isActive}
-                      />
-                    ))
-                  }
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Active</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {
+                      data.users.map((userItem, index) => (
+                        <User
+                          key={index}
+                          name={userItem.name}
+                          email={userItem.email}
+                          isActive={userItem.isActive}
+                        />
+                      ))
+                    }
+                  </tbody>
                 </table>
               </div>
               </div>
