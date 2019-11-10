@@ -9,6 +9,7 @@ import IngredientsSection from './components/Ingredient/ingredientSection';
 import UsersSection from './components/User/userSection';
 import NavBar from './components/NavBar';
 import Home from './components/Home/index';
+import Login from './components/Login/index';
 
 const NotMatch = () => (
   <div>
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/recetas" component={RecetasSection}></Route>
           <Route exact path="/ingredients" component={IngredientsSection}></Route>
           <Route exact path="/users" component={UsersSection}></Route>
+          <Route exact path="/login" component={Login}></Route>
           <Route path="*">
             <NotMatch />
           </Route>
