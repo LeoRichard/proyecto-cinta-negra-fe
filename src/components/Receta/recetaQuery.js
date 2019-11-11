@@ -9,6 +9,9 @@ const RECETAS = gql`
      name
      difficulty
      content
+     author {
+       name
+     }
     }
   }
 
@@ -34,6 +37,9 @@ const RecetasQuery = () => {
                       name={recetaItem.name}
                       difficulty={recetaItem.difficulty}
                       content={recetaItem.content}
+                      author={recetaItem.author.map(author => (
+                        author.name
+                      ))}
                     />
                   ))
                 }
