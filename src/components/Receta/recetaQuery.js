@@ -8,6 +8,7 @@ const RECETAS = gql`
     getAllRecetas {
      name
      difficulty
+     content
     }
   }
 
@@ -32,6 +33,7 @@ const RecetasQuery = () => {
                       key={index}
                       name={recetaItem.name}
                       difficulty={recetaItem.difficulty}
+                      content={recetaItem.content}
                     />
                   ))
                 }

@@ -20,3 +20,31 @@
 .App-link {
   color: #09d3ac;
 }
+
+/*//////////////////////////////////////////////////////////////////
+[ Receta Grid ]*/
+
+div.tags.absolute {
+    position: absolute;
+    right: 0;
+    top: -15px;
+    width: 100%;
+    z-index: 10;
+    text-align: center;
+}
+
+div.tags a, div.tags span {
+    font-size: 15px;
+    color: #fff;
+    display: inline-block;
+    padding: 4px 25px;
+    vertical-align: top;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    border-radius: 25px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background-color: #E84E89;
+}
