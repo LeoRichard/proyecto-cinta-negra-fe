@@ -11,6 +11,7 @@ const RECETAS = gql`
      content
      author {
        name
+       profileImage
      }
     }
   }
@@ -26,7 +27,7 @@ const RecetasQuery = () => {
           ({ loading, error, data}) => {
             if (loading) return <p>Loading..</p>
             if (error) return <p>Algo salio mal</p>
-
+            console.log(data.getAllRecetas);
             return (
               <div className="container">
               <div className="row">
@@ -39,6 +40,9 @@ const RecetasQuery = () => {
                       content={recetaItem.content}
                       author={recetaItem.author.map(author => (
                         author.name
+                      ))}
+                      profileImage={recetaItem.author.map(author => (
+                        author.profileImage
                       ))}
                     />
                   ))

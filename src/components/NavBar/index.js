@@ -25,6 +25,9 @@ const NavBar = () => {
             <li className="nav-item">
               <Link to="/users" className="nav-link">Users</Link>
             </li>
+            <li className="nav-item">
+              <Link to="/mis-recetas" className="nav-link">Mis Recetas</Link>
+            </li>
           </ul>
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">

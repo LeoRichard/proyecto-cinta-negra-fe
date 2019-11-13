@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 
 import RecetasSection from './components/Receta/recetasSection';
+import UserRecetasSection from './components/Receta/userRecetasSection';
 import IngredientsSection from './components/Ingredient/ingredientSection';
 import UsersSection from './components/User/userSection';
 import NavBar from './components/NavBar';
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/recetas" component={RecetasSection}></Route>
           <Route exact path="/ingredients" component={IngredientsSection}></Route>
           <Route exact path="/users" component={UsersSection}></Route>
+          <Route exact path="/mis-recetas" component={UserRecetasSection}></Route>
           <Route exact path="/login" component={Login}></Route>
           <Route path="*">
             <NotMatch />

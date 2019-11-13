@@ -20,6 +20,11 @@
 .App-link {
   color: #09d3ac;
 }
+a {
+    color: #333;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ Receta Grid ]*/
@@ -47,4 +52,45 @@ div.tags a, div.tags span {
     font-weight: 600;
     letter-spacing: 0.5px;
     background-color: #E84E89;
+}
+.card {
+    border-radius: 15px!important;
+}
+.card-footer:last-child {
+    border-radius: 0 0 15px 15px!important;
+}
+.author-meta {
+    border-top: 2px solid #F4F4F4;
+    background-color: #ffffff!important;
+    padding: 15px 20px;
+    line-height: 1;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+.author-meta a.author .author-name {
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+.author-meta .author-image {
+    display: block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 13px;
+    -webkit-box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, .25);
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, .25);
+}
+.cover {
+    background-repeat: no-repeat!important;
+    background-position: center center!important;
+    background-size: cover!important;
+}
+.author-meta a.author {
+    float: left;
+    display: block;
+    line-height: 35px;
+    color: #333;
+    text-align: right;
 }
