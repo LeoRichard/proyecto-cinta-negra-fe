@@ -4,11 +4,12 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 
-import RecetasSection from './components/Receta/recetasSection';
 import UserRecetasSection from './components/Receta/userRecetasSection';
+import UsersSection from './components/User/userSection';
+import RecetasSection from './components/Receta/recetasSection';
 import RecetaRegister from './components/Receta/recetaRegister';
 import IngredientsSection from './components/Ingredient/ingredientSection';
-import UsersSection from './components/User/userSection';
+import IngredientRegister from './components/Ingredient/ingredientRegister';
 import NavBar from './components/NavBar';
 import Home from './components/Home/index';
 import Login from './components/Login/index';
@@ -31,6 +32,7 @@ function App() {
           <Route exact path="/users" component={UsersSection}></Route>
           <Route exact path="/mis-recetas" component={UserRecetasSection}></Route>
           <Route exact path="/new-receta" component={RecetaRegister}></Route>
+          <Route exact path="/new-ingredient" component={IngredientRegister}></Route>
           <Route exact path="/login" component={Login}></Route>
           <Route path="*">
             <NotMatch />

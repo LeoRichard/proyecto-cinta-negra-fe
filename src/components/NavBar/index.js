@@ -31,6 +31,9 @@ const NavBar = () => {
             <li className="nav-item">
               <Link to="/new-receta" className="nav-link">Crear Receta</Link>
             </li>
+            <li className="nav-item">
+              <Link to="/new-ingredient" className="nav-link">Crear Ingrediente</Link>
+            </li>
           </ul>
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
