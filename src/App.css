@@ -83,14 +83,25 @@ div.tags a, div.tags span {
     box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, .25);
 }
 .cover {
-    background-repeat: no-repeat!important;
     background-position: center center!important;
+    background-repeat: no-repeat!important;
     background-size: cover!important;
 }
 .author-meta a.author {
-    float: left;
-    display: block;
-    line-height: 35px;
     color: #333;
+    display: block;
+    float: left;
+    line-height: 35px;
     text-align: right;
+}
+
+.select-grey {
+    background-color: #e6e6e6!important;
+    border: none!important;
+    color: #8f8fa1!important;
+    font-family: Ubuntu-Bold;
+    font-size: 18px!important;
+    height: 62px!important;
+    line-height: 1.2!important;
+    padding: 0 20px 0 34px!important;
 }

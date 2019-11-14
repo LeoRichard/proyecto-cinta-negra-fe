@@ -88,7 +88,7 @@ const Basic = ({doLogin}) => (
     						</div>
 
     						<div>
-    							<a href="#" className="txt1">
+    							<a href="/" className="txt1">
     								Forgot?
     							</a>
     						</div>

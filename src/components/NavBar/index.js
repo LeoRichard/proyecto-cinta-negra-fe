@@ -7,7 +7,7 @@ const NavBar = () => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <a className="navbar-brand" href="#">WhatCanICook?</a>
+        <a className="navbar-brand" href="/">WhatCanICook?</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -27,6 +27,9 @@ const NavBar = () => {
             </li>
             <li className="nav-item">
               <Link to="/mis-recetas" className="nav-link">Mis Recetas</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/new-receta" className="nav-link">Crear Receta</Link>
             </li>
           </ul>
           <ul className="navbar-nav ml-auto">

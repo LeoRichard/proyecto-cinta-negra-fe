@@ -27,9 +27,9 @@ const RecetasQuery = () => {
           ({ loading, error, data}) => {
             if (loading) return <p>Loading..</p>
             if (error) return <p>Algo salio mal</p>
-            console.log(data.getAllRecetas);
+
             return (
-              <div className="container">
+              <div className="container mt-4">
               <div className="row">
                 {
                   data.getAllRecetas.map((recetaItem, index) => (

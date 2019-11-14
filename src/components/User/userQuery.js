@@ -25,7 +25,7 @@ const UsersQuery = () => {
             if (error) return <p>Algo salio mal</p>
 
             return (
-              <div className="container">
+              <div className="container mt-4">
               <div className="row">
                 <table className="table">
                   <thead>

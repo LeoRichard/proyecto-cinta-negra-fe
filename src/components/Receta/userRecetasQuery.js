@@ -20,16 +20,15 @@ const USER_RECETAS = gql`
 const UserRecetasQuery = () => {
   return (
     <div className="mt-5 mb-5">
-      <h2>Receta List</h2>
+      <h2>Mis Recetas</h2>
       <Query query={USER_RECETAS}>
         {
           ({ loading, error, data}) => {
             if (loading) return <p>Loading..</p>
             if (error) return <p>Algo salio mal</p>
-            const { recetas } = data.getUserRecetas;
-            console.log(recetas);
+
             return (
-              <div className="container">
+              <div className="container mt-4">
               <div className="row">
                 {
                   data.getUserRecetas.recetas.map((userItem, index) => (
