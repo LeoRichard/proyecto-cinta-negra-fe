@@ -11,6 +11,7 @@ const ADD_RECETA = gql`
       name
       difficulty
       content
+      featuredImage
     }
   }
 `;

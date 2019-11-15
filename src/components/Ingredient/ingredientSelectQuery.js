@@ -25,7 +25,7 @@ const IngredientsSelectQuery = ({name, onChange, onBlur, value}) => {
                   <option value=''>Select Ingredient</option>
                   {
                     data.ingredients.map((ingredientItem, index) => (
-                      <option value={ingredientItem._id}>{ingredientItem.name}</option>
+                      <option value={ingredientItem._id} key={index}>{ingredientItem.name}</option>
                     ))
                   }
                   </select>

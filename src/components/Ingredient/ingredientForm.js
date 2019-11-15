@@ -1,6 +1,5 @@
 import React from 'react';
 import { Formik } from 'formik';
-import IngredientsSelectQuery from '../Ingredient/ingredientSelectQuery';
 
 const IngredientForm = ({addIngredientMutation, history}) => (
   <div className="limiter">

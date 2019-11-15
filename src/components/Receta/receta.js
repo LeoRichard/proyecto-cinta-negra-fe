@@ -3,18 +3,11 @@ import AddFavorite from '../User/favoriteRegister';
 import logo from '../../logo.svg';
 
 const Receta = ({ recetaid, name, difficulty, content, author, profileImage, featuredImage }) => {
-  var recetaImage = '';
-
-  if(featuredImage !== "") {
-    recetaImage = featuredImage;
-  } else {
-    recetaImage = logo;
-  }
   return (
     <div className="col-lg-4 mt-4 mb-4">
       <div className="card">
         <div className="featured-image">
-          <img src={recetaImage} className="card-img-top" alt="..." />
+          <img src={featuredImage} className="card-img-top" alt="..." />
           <div className="tags absolute"><a href="/" className="tag-link-7">{difficulty}</a></div>
         </div>
         <div className="card-body gradient-effect">
