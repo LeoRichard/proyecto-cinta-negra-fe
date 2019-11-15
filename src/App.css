@@ -79,8 +79,6 @@ div.tags a, div.tags span {
     border-radius: 50%;
     float: left;
     margin-right: 13px;
-    -webkit-box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, .25);
-    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, .25);
 }
 .cover {
     background-position: center center!important;
