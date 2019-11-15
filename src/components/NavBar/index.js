@@ -16,23 +16,26 @@ const NavBar = () => {
             <li className="nav-item">
               <Link to="/" className="nav-link">Home</Link>
             </li>
-            <li className="nav-item">
-              <Link to="/recetas" className="nav-link">Recetas</Link>
+
+            <li class="nav-item dropdown">
+              <Link to="/recetas" className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recetas</Link>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <Link to="/recetas" className="dropdown-item">Explorar Recetas</Link>
+                <Link to="/new-receta" className="dropdown-item">Crear Receta</Link>
+                <div class="dropdown-divider"></div>
+                <Link to="/mis-recetas" className="dropdown-item">Mis Recetas</Link>
+              </div>
             </li>
-            <li className="nav-item">
-              <Link to="/ingredients" className="nav-link">Ingredients</Link>
+
+            <li className="nav-item dropdown">
+              <Link to="/ingredients" className="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ingredientes</Link>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown2">
+                <Link to="/ingredients" className="dropdown-item">Explorar Ingredientes</Link>
+                <Link to="/new-ingredient" className="dropdown-item">Crear Ingrediente</Link>
+              </div>
             </li>
             <li className="nav-item">
               <Link to="/users" className="nav-link">Users</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/mis-recetas" className="nav-link">Mis Recetas</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/new-receta" className="nav-link">Crear Receta</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/new-ingredient" className="nav-link">Crear Ingrediente</Link>
             </li>
           </ul>
           <ul className="navbar-nav ml-auto">
