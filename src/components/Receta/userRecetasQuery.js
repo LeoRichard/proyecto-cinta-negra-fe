@@ -10,6 +10,7 @@ const USER_RECETAS = gql`
        name
        content
        difficulty
+       featuredImage
      }
      name
      profileImage
@@ -39,6 +40,7 @@ const UserRecetasQuery = () => {
                       content={userItem.content}
                       author={data.getUserRecetas.name}
                       profileImage={data.getUserRecetas.profileImage}
+                      featuredImage={userItem.featuredImage}
                     />
                   ))
                 }

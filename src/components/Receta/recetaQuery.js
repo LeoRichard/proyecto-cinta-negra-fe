@@ -6,6 +6,7 @@ import Receta from './receta';
 const RECETAS = gql`
   {
     getAllRecetas {
+      _id
      name
      difficulty
      content
@@ -13,6 +14,7 @@ const RECETAS = gql`
        name
        profileImage
      }
+     featuredImage
     }
   }
 
@@ -35,6 +37,7 @@ const RecetasQuery = () => {
                   data.getAllRecetas.map((recetaItem, index) => (
                     <Receta
                       key={index}
+                      recetaid={recetaItem._id}
                       name={recetaItem.name}
                       difficulty={recetaItem.difficulty}
                       content={recetaItem.content}
@@ -44,6 +47,7 @@ const RecetasQuery = () => {
                       profileImage={recetaItem.author.map(author => (
                         author.profileImage
                       ))}
+                      featuredImage={recetaItem.featuredImage}
                     />
                   ))
                 }

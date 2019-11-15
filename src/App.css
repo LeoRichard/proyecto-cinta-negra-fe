@@ -94,6 +94,13 @@ div.tags a, div.tags span {
     line-height: 35px;
     text-align: right;
 }
+.favoriteIcon {
+    float: right;
+    line-height: 30px;
+}
+.favoriteIcon .fa-heart:hover {
+    color: red;
+}
 
 .select-grey {
     background-color: #e6e6e6!important;
