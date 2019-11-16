@@ -125,6 +125,7 @@ class RecetaForm extends React.Component {
                       className="input100"
                       placeholder="Content"
                     />
+                    <span className="focus-input100"></span>
                   </div>
 
                   <div className="form-group">

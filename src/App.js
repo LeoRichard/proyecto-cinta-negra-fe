@@ -6,6 +6,7 @@ import 'bootstrap/dist/js/bootstrap.js';
 
 import UserRecetasSection from './components/Receta/userRecetasSection';
 import UsersSection from './components/User/userSection';
+import UserRegister from './components/User/userRegister';
 import RecetasSection from './components/Receta/recetasSection';
 import RecetaRegister from './components/Receta/recetaRegister';
 import IngredientsSection from './components/Ingredient/ingredientSection';
@@ -30,6 +31,7 @@ function App() {
           <Route exact path="/recetas" component={RecetasSection}></Route>
           <Route exact path="/ingredients" component={IngredientsSection}></Route>
           <Route exact path="/users" component={UsersSection}></Route>
+          <Route exact path="/new-user" component={UserRegister}></Route>
           <Route exact path="/mis-recetas" component={UserRecetasSection}></Route>
           <Route exact path="/new-receta" component={RecetaRegister}></Route>
           <Route exact path="/new-ingredient" component={IngredientRegister}></Route>

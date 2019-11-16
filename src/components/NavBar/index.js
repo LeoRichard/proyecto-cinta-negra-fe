@@ -34,8 +34,12 @@ const NavBar = () => {
                 <Link to="/new-ingredient" className="dropdown-item">Crear Ingrediente</Link>
               </div>
             </li>
-            <li className="nav-item">
-              <Link to="/users" className="nav-link">Users</Link>
+            <li className="nav-item dropdown">
+              <Link to="/users" className="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Users</Link>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown3">
+                  <Link to="/users" className="dropdown-item">Usuarios</Link>
+                  <Link to="/new-user" className="dropdown-item">Crear Usuario</Link>
+                </div>
             </li>
           </ul>
           <ul className="navbar-nav ml-auto">
