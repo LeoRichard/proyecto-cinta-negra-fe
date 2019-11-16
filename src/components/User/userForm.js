@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Field } from 'formik';
+import { Formik } from 'formik';
 
 import DropZone from '../Dropzone';
 

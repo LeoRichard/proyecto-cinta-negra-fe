@@ -17,7 +17,7 @@ const USERS = gql`
 const UsersQuery = () => {
   return (
     <div className="mt-5 mb-5">
-      <h2>User List</h2>
+      <h2 className="text-center">User List</h2>
       <Query query={USERS}>
         {
           ({ loading, error, data}) => {

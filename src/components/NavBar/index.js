@@ -35,7 +35,7 @@ const NavBar = () => {
               </div>
             </li>
             <li className="nav-item dropdown">
-              <Link to="/users" className="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Users</Link>
+              <Link to="/users" className="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuarios</Link>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown3">
                   <Link to="/users" className="dropdown-item">Usuarios</Link>
                   <Link to="/new-user" className="dropdown-item">Crear Usuario</Link>

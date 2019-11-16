@@ -21,7 +21,7 @@ const USER_RECETAS = gql`
 const UserRecetasQuery = () => {
   return (
     <div className="mt-5 mb-5">
-      <h2>Mis Recetas</h2>
+      <h2 className="text-center">Mis Recetas</h2>
       <Query query={USER_RECETAS}>
         {
           ({ loading, error, data}) => {
