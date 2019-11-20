@@ -1,6 +1,5 @@
 import React from 'react';
 import AddFavorite from '../User/favoriteRegister';
-import logo from '../../logo.svg';
 
 const Receta = ({ recetaid, name, difficulty, content, author, profileImage, featuredImage }) => {
   return (

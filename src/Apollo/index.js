@@ -3,12 +3,35 @@ import { createUploadLink } from 'apollo-upload-client';
 import { onError } from 'apollo-link-error';
 import { ApolloLink } from 'apollo-link';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+// subscriptions
+import { WebSocketLink } from 'apollo-link-ws';
+import { split } from 'apollo-link';
+import { getMainDefinition } from 'apollo-utilities';
 
 const HTTP_HOST = "https://recetas-be.herokuapp.com/graphql";
+const WS_HOST = 'wss://recetas-be.herokuapp.com/graphql';
 
 const httpLink = new createUploadLink({
   uri: HTTP_HOST,
 });
+
+const wsLink = new WebSocketLink({
+  uri: WS_HOST,
+  options: {
+    reconnect: true,
+  }
+});
+
+const link = split(
+  ({ query }) => {
+    const definition = getMainDefinition(query);
+    return (
+      definition.kind === 'OperationDefinition' && definition.operation === 'subscription'
+    );
+  },
+  wsLink,
+  httpLink,
+);
 
 const AuthLink = (operation, next) => {
   const token = localStorage.getItem('jwt');
@@ -43,7 +66,7 @@ const client = new ApolloClient({
       }
     }),
     AuthLink,
-    httpLink,
+    link,
   ]),
   cache,
 });
