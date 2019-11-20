@@ -15,6 +15,8 @@ import NavBar from './components/NavBar';
 import Home from './components/Home/index';
 import Login from './components/Login/index';
 
+import Notification from './components/Notification';
+
 const NotMatch = () => (
   <div>
     <h1 className="mt-5 mb-5">404</h1>
@@ -26,6 +28,7 @@ function App() {
     <div className="App">
       <Router>
         <NavBar />
+        <Notification />
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route exact path="/recetas" component={RecetasSection}></Route>

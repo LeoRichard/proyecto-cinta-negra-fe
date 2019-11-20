@@ -3,6 +3,9 @@ import { Formik } from 'formik';
 import IngredientsSelectQuery from '../Ingredient/ingredientSelectQuery';
 import DropZone from '../Dropzone';
 
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 class RecetaForm extends React.Component {
   state = {
     featuredImage: null,
@@ -23,7 +26,8 @@ class RecetaForm extends React.Component {
   }
 
   render() {
-    const { addRecetaMutation, history } = this.props;
+    const { addRecetaMutation } = this.props;
+    const notifyPublishing = () => toast.success("Publicando receta...", { autoClose: 1600 });
 
     return (
       <div className="limiter">
@@ -51,6 +55,7 @@ class RecetaForm extends React.Component {
               return errors;
             }}
             onSubmit={(values, { setSubmitting }) => {
+              notifyPublishing();
               setTimeout(() => {
                 addRecetaMutation({
                   variables: {
@@ -64,8 +69,8 @@ class RecetaForm extends React.Component {
                   }
                 })
                 setSubmitting(false);
-              }, 4000);
-              history.push('/mis-recetas');
+                //history.push('/mis-recetas');
+              }, 800);
             }}
           >
             {
