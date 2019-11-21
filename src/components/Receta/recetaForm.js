@@ -26,7 +26,7 @@ class RecetaForm extends React.Component {
   }
 
   render() {
-    const { addRecetaMutation } = this.props;
+    const { addRecetaMutation, history } = this.props;
     const notifyPublishing = () => toast.success("Publicando receta...", { autoClose: 1600 });
 
     return (
@@ -70,7 +70,7 @@ class RecetaForm extends React.Component {
                 })
                 setSubmitting(false);
                 //history.push('/mis-recetas');
-              }, 800);
+              }, 2000);
             }}
           >
             {

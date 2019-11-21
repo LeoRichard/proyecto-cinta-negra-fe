@@ -42,7 +42,6 @@ class Notification extends React.Component {
         <Subscription subscription={FAVORITE_ADDED}>
           {
             ({ data }) => {
-              console.log(data);
               if (data) this.notifyFavorite(data);
               return <ToastContainer />;
             }

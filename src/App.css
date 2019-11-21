@@ -95,6 +95,9 @@ div.tags a, div.tags span {
 .favoriteIcon .fa-heart:hover {
     color: red;
 }
+.favoriteIcon .fa-trash-alt:hover {
+    color: #333;
+}
 
 .select-grey {
     background-color: #e6e6e6!important;

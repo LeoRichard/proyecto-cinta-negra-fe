@@ -7,6 +7,7 @@ const USER_FAVORITES = gql`
   {
     getUserRecetas {
       favorites {
+       _id
        name
        content
        difficulty
@@ -39,6 +40,7 @@ const UserFavoritesQuery = () => {
                   data.getUserRecetas.favorites.map((userItem, index) => (
                     <Receta
                       key={index}
+                      recetaid={userItem._id}
                       name={userItem.name}
                       difficulty={userItem.difficulty}
                       content={userItem.content}
@@ -49,6 +51,7 @@ const UserFavoritesQuery = () => {
                           author.profileImage
                       ))}
                       featuredImage={userItem.featuredImage}
+                      isFavoriteSection={true}
                     />
                   ))
                 }

@@ -17,7 +17,6 @@ const RECETAS = gql`
      featuredImage
     }
   }
-
 `;
 
 const RecetasQuery = () => {

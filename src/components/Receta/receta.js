@@ -1,7 +1,8 @@
 import React from 'react';
 import AddFavorite from '../Favorites/favoritesRegister';
+import DeleteFavorite from '../Favorites/favoritesDelete';
 
-const Receta = ({ recetaid, name, difficulty, content, author, profileImage, featuredImage }) => {
+const Receta = ({ recetaid, name, difficulty, content, author, profileImage, featuredImage, isFavoriteSection }) => {
   return (
     <div className="col-lg-4 mt-4 mb-4">
       <div className="card">
@@ -20,7 +21,13 @@ const Receta = ({ recetaid, name, difficulty, content, author, profileImage, fea
             <span className="author-image cover" style={{backgroundImage: `url(${profileImage})`}}></span>
             <span className="author-name">{author}</span>
             </a>
-            <AddFavorite recetaID={recetaid}/>
+            { isFavoriteSection ? (
+              <DeleteFavorite recetaID={recetaid}/>
+            ) : (
+              <AddFavorite recetaID={recetaid}/>
+            )
+            }
+
         </div>
       </div>
     </div>
