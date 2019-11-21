@@ -22,7 +22,7 @@ const AddFavorite = (receta) => {
 
   return (
     <div className="favoriteIcon">
-    <button onClick={addFavorite}><FontAwesomeIcon icon={faHeart} size="lg" color="#d2d2d2" /></button>
+      <button onClick={addFavorite}><FontAwesomeIcon icon={faHeart} size="lg" color="#d2d2d2" /></button>
     </div>
   );
 };

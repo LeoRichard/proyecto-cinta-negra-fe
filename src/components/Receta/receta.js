@@ -1,5 +1,5 @@
 import React from 'react';
-import AddFavorite from '../User/favoriteRegister';
+import AddFavorite from '../Favorites/favoritesRegister';
 
 const Receta = ({ recetaid, name, difficulty, content, author, profileImage, featuredImage }) => {
   return (

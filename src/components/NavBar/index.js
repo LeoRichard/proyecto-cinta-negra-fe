@@ -24,6 +24,7 @@ const NavBar = () => {
                 <Link to="/new-receta" className="dropdown-item">Crear Receta</Link>
                 <div className="dropdown-divider"></div>
                 <Link to="/mis-recetas" className="dropdown-item">Mis Recetas</Link>
+                <Link to="/mis-favoritos" className="dropdown-item">Mis Favoritos</Link>
               </div>
             </li>
 

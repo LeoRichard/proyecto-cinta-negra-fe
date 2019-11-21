@@ -8,8 +8,8 @@ import { WebSocketLink } from 'apollo-link-ws';
 import { split } from 'apollo-link';
 import { getMainDefinition } from 'apollo-utilities';
 
-const HTTP_HOST = "https://recetas-be.herokuapp.com/graphql";
-const WS_HOST = 'wss://recetas-be.herokuapp.com/graphql';
+const HTTP_HOST = "http://localhost:4000/graphql";
+const WS_HOST = 'ws://localhost:4000/graphql';
 
 const httpLink = new createUploadLink({
   uri: HTTP_HOST,

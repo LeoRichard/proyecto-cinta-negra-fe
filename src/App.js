@@ -4,6 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 
+import UserFavoritesSection from './components/Favorites/favoritesSection';
 import UserRecetasSection from './components/Receta/userRecetasSection';
 import UsersSection from './components/User/userSection';
 import UserRegister from './components/User/userRegister';
@@ -35,6 +36,7 @@ function App() {
           <Route exact path="/ingredients" component={IngredientsSection}></Route>
           <Route exact path="/users" component={UsersSection}></Route>
           <Route exact path="/new-user" component={UserRegister}></Route>
+          <Route exact path="/mis-favoritos" component={UserFavoritesSection}></Route>
           <Route exact path="/mis-recetas" component={UserRecetasSection}></Route>
           <Route exact path="/new-receta" component={RecetaRegister}></Route>
           <Route exact path="/new-ingredient" component={IngredientRegister}></Route>

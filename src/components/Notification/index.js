@@ -13,20 +13,42 @@ subscription {
 }
 `;
 
+const FAVORITE_ADDED = gql`
+subscription {
+  favoriteAdded {
+    favorites {
+      name
+    }
+  }
+}
+`;
+
 class Notification extends React.Component {
 
   notify = ({recetaAdded}) => toast.success(`${recetaAdded.name}, publicada con éxito!`);
+  notifyFavorite = ({favoriteAdded}) => toast.success(`Receta added to favorites!`);
 
   render() {
     return (
-      <Subscription subscription={RECETA_ADDED}>
-        {
-          ({ data }) => {
-            if (data) this.notify(data);
-            return <ToastContainer />;
+      <>
+        <Subscription subscription={RECETA_ADDED}>
+          {
+            ({ data }) => {
+              if (data) this.notify(data);
+              return <ToastContainer />;
+            }
           }
-        }
-      </Subscription>
+        </Subscription>
+        <Subscription subscription={FAVORITE_ADDED}>
+          {
+            ({ data }) => {
+              console.log(data);
+              if (data) this.notifyFavorite(data);
+              return <ToastContainer />;
+            }
+          }
+        </Subscription>
+      </>
     );
   }
 
