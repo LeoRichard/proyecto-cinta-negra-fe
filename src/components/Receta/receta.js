@@ -1,9 +1,11 @@
 import React from 'react';
 import AddFavorite from '../Favorites/favoritesRegister';
 import DeleteFavorite from '../Favorites/favoritesDelete';
+import Fade from 'react-reveal/Zoom';
 
 const Receta = ({ recetaid, name, difficulty, content, author, profileImage, featuredImage, isFavoriteSection }) => {
   return (
+    <Fade ssrFadeout>
     <div className="col-lg-4 mt-4 mb-4">
       <div className="card">
         <div className="featured-image">
@@ -31,6 +33,7 @@ const Receta = ({ recetaid, name, difficulty, content, author, profileImage, fea
         </div>
       </div>
     </div>
+    </Fade>
   );
 };
 

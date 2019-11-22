@@ -35,27 +35,27 @@ const UserFavoritesQuery = () => {
 
             return (
               <div className="container mt-4">
-              <div className="row">
-                {
-                  data.getUserRecetas.favorites.map((userItem, index) => (
-                    <Receta
-                      key={index}
-                      recetaid={userItem._id}
-                      name={userItem.name}
-                      difficulty={userItem.difficulty}
-                      content={userItem.content}
-                      author={userItem.author.map(author => (
-                          author.name
-                      ))}
-                      profileImage={userItem.author.map(author => (
-                          author.profileImage
-                      ))}
-                      featuredImage={userItem.featuredImage}
-                      isFavoriteSection={true}
-                    />
-                  ))
-                }
-              </div>
+                <div className="row">
+                  {
+                    data.getUserRecetas.favorites.map((userItem, index) => (
+                      <Receta
+                        key={index}
+                        recetaid={userItem._id}
+                        name={userItem.name}
+                        difficulty={userItem.difficulty}
+                        content={userItem.content}
+                        author={userItem.author.map(author => (
+                            author.name
+                        ))}
+                        profileImage={userItem.author.map(author => (
+                            author.profileImage
+                        ))}
+                        featuredImage={userItem.featuredImage}
+                        isFavoriteSection={true}
+                      />
+                    ))
+                  }
+                </div>
               </div>
             );
           }

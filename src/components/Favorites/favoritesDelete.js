@@ -30,6 +30,7 @@ const REMOVE_FAVORITE = gql`
   mutation removeFavoriteFunction($recetaID: String) {
     removeFavorite(recetaID: $recetaID ) {
       favorites {
+        _id
         name
       }
     }
@@ -45,8 +46,13 @@ const DeleteFavorite = (receta) => {
     variables: { recetaID: receta.recetaID },
     update(store, { data: removeFavorite}) {
       const data = store.readQuery({ query: USER_FAVORITES, variables: {recetaID: receta.recetaID} });
-      console.log("TCL: DeleteFavorite -> render -> data", data)
-      data.getUserRecetas.favorites.pop(removeFavorite);
+      //console.log("TCL: DeleteFavorite -> render -> data", data)
+      data.getUserRecetas.favorites.forEach((favorite, index) => {
+        if(favorite._id === receta.recetaID) {
+          data.getUserRecetas.favorites.splice(index, 1);
+        }
+      });
+
       store.writeQuery({ query: USER_FAVORITES, variables: {recetaID: receta.recetaID}, data });
     }
   });

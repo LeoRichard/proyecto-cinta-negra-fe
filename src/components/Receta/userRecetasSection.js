@@ -3,9 +3,7 @@ import UserRecetasQuery from './userRecetasQuery';
 
 const UserRecetasSection = () => {
   return (
-    <div>
       <UserRecetasQuery />
-    </div>
   );
 };
 
