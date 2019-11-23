@@ -1,9 +1,10 @@
 import React from 'react';
 import AddFavorite from '../Favorites/favoritesRegister';
 import DeleteFavorite from '../Favorites/favoritesDelete';
+import RemoveReceta from '../Receta/recetaRemove';
 import Fade from 'react-reveal/Zoom';
 
-const Receta = ({ recetaid, name, difficulty, content, author, profileImage, featuredImage, isFavoriteSection }) => {
+const Receta = ({ recetaid, name, difficulty, content, author, profileImage, featuredImage, isFavoriteSection, isUserRecetas }) => {
   return (
     <Fade ssrFadeout>
     <div className="col-lg-4 mt-4 mb-4">
@@ -23,12 +24,9 @@ const Receta = ({ recetaid, name, difficulty, content, author, profileImage, fea
             <span className="author-image cover" style={{backgroundImage: `url(${profileImage})`}}></span>
             <span className="author-name">{author}</span>
             </a>
-            { isFavoriteSection ? (
-              <DeleteFavorite recetaID={recetaid}/>
-            ) : (
-              <AddFavorite recetaID={recetaid}/>
-            )
-            }
+            { isFavoriteSection && !isUserRecetas && <DeleteFavorite recetaID={recetaid}/> }
+            { isUserRecetas && !isFavoriteSection && <RemoveReceta recetaID={recetaid}/> }
+            { !isUserRecetas && !isFavoriteSection && <AddFavorite recetaID={recetaid}/> }
 
         </div>
       </div>
