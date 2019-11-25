@@ -3,10 +3,14 @@ import { createUploadLink } from 'apollo-upload-client';
 import { onError } from 'apollo-link-error';
 import { ApolloLink } from 'apollo-link';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+
 // subscriptions
 import { WebSocketLink } from 'apollo-link-ws';
 import { split } from 'apollo-link';
 import { getMainDefinition } from 'apollo-utilities';
+
+import defaults from './default';
+import resolvers from './resolvers';
 
 const HTTP_HOST = "http://localhost:4000/graphql";
 const WS_HOST = 'ws://localhost:4000/graphql';
@@ -47,6 +51,7 @@ const AuthLink = (operation, next) => {
 
   return next(operation);
 }
+
 const cache = new InMemoryCache();
 
 const client = new ApolloClient({
@@ -68,6 +73,8 @@ const client = new ApolloClient({
     AuthLink,
     link,
   ]),
+  resolvers,
+  defaults,
   cache,
 });
 

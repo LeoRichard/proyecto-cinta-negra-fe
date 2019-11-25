@@ -2,7 +2,14 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = (props) => {
+  const { loginState, returnNull } = props;
+  //console.log("TCL: NavBar -> props", props)
+  // const getUserData = data ? data.getUserData : false;
+  const isUserLogged = loginState && loginState.userLogged;
+
+  if(returnNull) return null;
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -17,15 +24,8 @@ const NavBar = () => {
               <Link to="/" className="nav-link">Home</Link>
             </li>
 
-            <li className="nav-item dropdown">
-              <Link to="/recetas" className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recetas</Link>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <Link to="/recetas" className="dropdown-item">Explorar Recetas</Link>
-                <Link to="/new-receta" className="dropdown-item">Crear Receta</Link>
-                <div className="dropdown-divider"></div>
-                <Link to="/mis-recetas" className="dropdown-item">Mis Recetas</Link>
-                <Link to="/mis-favoritos" className="dropdown-item">Mis Favoritos</Link>
-              </div>
+            <li className="nav-item">
+              <Link to="/recetas" className="nav-link">Recetas</Link>
             </li>
 
             <li className="nav-item dropdown">
@@ -44,9 +44,25 @@ const NavBar = () => {
             </li>
           </ul>
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-                <Link to="/login" className="nav-link">Iniciar Sesión</Link>
-            </li>
+            {
+              isUserLogged &&
+              <li className="nav-item dropdown">
+                <Link to="/mis-recetas" className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome, User</Link>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <Link to="/new-receta" className="dropdown-item">Crear Receta</Link>
+                  <Link to="/mis-recetas" className="dropdown-item">Mis Recetas</Link>
+                  <Link to="/mis-favoritos" className="dropdown-item">Mis Favoritos</Link>
+                  <div className="dropdown-divider"></div>
+                  <Link to="/logout" className="dropdown-item">Logout</Link>
+                </div>
+              </li>
+            }
+            {
+              !isUserLogged &&
+              <li className="nav-item">
+                  <Link to="/login" className="nav-link">Login</Link>
+              </li>
+            }
         </ul>
         </div>
         </div>

@@ -5,6 +5,7 @@ function MyDropzone({ onDropCallback }) {
   const onDrop = useCallback(acceptedFiles => {
     onDropCallback(acceptedFiles);
     // Do something with the files
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 

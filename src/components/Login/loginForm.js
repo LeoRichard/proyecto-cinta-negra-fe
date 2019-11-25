@@ -3,7 +3,7 @@ import { Formik } from 'formik';
 import '../../Login.css';
 import '../../Utils.css';
 
-const Basic = ({doLogin}) => (
+const Basic = ({doLogin, loading}) => (
   <div className="limiter">
     <div className="container-login100">
       <Formik
@@ -33,7 +33,7 @@ const Basic = ({doLogin}) => (
               }
             })
             setSubmitting(false);
-          }, 4000);
+          }, 400);
         }}
       >
         {
@@ -96,7 +96,12 @@ const Basic = ({doLogin}) => (
 
               <div className="container-login100-form-btn m-t-17">
                 <button className="login100-form-btn" type="submit" disabled={isSubmitting}>
-                  Login
+                  {loading &&
+                    <span>Logging in...</span>
+                  }
+                  {!loading &&
+                    <span>Log in</span>
+                  }
                 </button>
               </div>
             </form>

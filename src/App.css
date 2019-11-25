@@ -22,6 +22,14 @@ a {
     transition: all 300ms ease;
 }
 
+.notfound {
+    display: block;
+    font-size: 56px;
+    text-align: center;
+    margin-top: 15%;
+    font-weight: bold;
+}
+
 /*//////////////////////////////////////////////////////////////////
 [ Receta Grid ]*/
 

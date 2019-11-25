@@ -1,53 +1,48 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import client from './Apollo';
+import gql from 'graphql-tag';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 
-import UserFavoritesSection from './components/Favorites/favoritesSection';
-import UserRecetasSection from './components/Receta/userRecetasSection';
-import UsersSection from './components/User/userSection';
-import UserRegister from './components/User/userRegister';
-import RecetasSection from './components/Receta/recetasSection';
-import RecetaRegister from './components/Receta/recetaRegister';
-import IngredientsSection from './components/Ingredient/ingredientSection';
-import IngredientRegister from './components/Ingredient/ingredientRegister';
-import NavBar from './components/NavBar';
-import Home from './components/Home/index';
-import Login from './components/Login/index';
+import RouterComponent from './components/Router';
+import LoginState from './components/Login/LoginState';
 
-import Notification from './components/Notification';
+class App extends React.Component {
 
-const NotMatch = () => (
-  <div>
-    <h1 className="mt-5 mb-5">404</h1>
-  </div>
-);
+  componentDidMount() {
+    const token = localStorage.getItem('jwt');
+    if (token) this.handleLogin(true);
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <Router>
-        <NavBar />
-        <Notification />
-        <Switch>
-          <Route exact path="/" component={Home}></Route>
-          <Route exact path="/recetas" component={RecetasSection}></Route>
-          <Route exact path="/ingredients" component={IngredientsSection}></Route>
-          <Route exact path="/users" component={UsersSection}></Route>
-          <Route exact path="/new-user" component={UserRegister}></Route>
-          <Route exact path="/mis-favoritos" component={UserFavoritesSection}></Route>
-          <Route exact path="/mis-recetas" component={UserRecetasSection}></Route>
-          <Route exact path="/new-receta" component={RecetaRegister}></Route>
-          <Route exact path="/new-ingredient" component={IngredientRegister}></Route>
-          <Route exact path="/login" component={Login}></Route>
-          <Route path="*">
-            <NotMatch />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
-  );
+  // se ejecuta al cambiar un state o los props
+  componentDidUpdate() {}
+
+  // esto se ejecuta antes de borrar el componente en el DOM
+  componentWillUnmount() {}
+
+  handleLogin(userLogged = true) {
+  client.mutate({
+    mutation: gql`
+      mutation setUserLoggedFunction($stateLogged: Boolean) {
+        setUserLogged(logged: $stateLogged) @client {
+          data
+        }
+      }
+    `,
+    variables: { stateLogged: userLogged }
+  })
+}
+
+  render() {
+    return (
+      <div className="App">
+        <LoginState>
+          <RouterComponent handleLogin={this.handleLogin} />
+        </LoginState>
+      </div>
+    );
+  }
 }
 
 export default App;

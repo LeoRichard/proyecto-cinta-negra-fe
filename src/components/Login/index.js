@@ -15,12 +15,15 @@ const LOGIN = gql`
 
 class Login extends React.Component {
   setToken = token => {
+    const {handleLogin} = this.props;
     if (token) {
       localStorage.setItem("jwt", token);
+      handleLogin(true);
     }
   };
 
   render() {
+    const { handleLogin } = this.props;
     return (
       <div>
         <Mutation mutation={LOGIN}>
@@ -29,7 +32,7 @@ class Login extends React.Component {
               this.setToken(data.doLogin.token);
               return <Redirect to="/" />;
             }
-            return <LoginForm doLogin={doLogin} />;
+            return <LoginForm doLogin={doLogin} handleLogin={handleLogin} loading={loading} />;
           }}
         </Mutation>
       </div>
