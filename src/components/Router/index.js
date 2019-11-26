@@ -13,6 +13,7 @@ import UsersSection from '../User/userSection';
 import UserRegister from '../User/userRegister';
 import RecetasSection from '../Receta/recetasSection';
 import RecetaRegister from '../Receta/recetaRegister';
+import SingleRecetaViewSection from '../Receta/singleRecetaViewSection';
 import IngredientsSection from '../Ingredient/ingredientSection';
 import IngredientRegister from '../Ingredient/ingredientRegister';
 import NavBar from '../NavBar';
@@ -46,7 +47,8 @@ function RouterComponent({ loginState, handleLogin }) {
 
           {/* Public Routes */}
           <PublicRoute exact path="/" component={() => <Home />} />
-          <PublicRoute path="/recetas" component={() => <RecetasSection />} />
+          <PublicRoute exact path="/recetas" component={() => <RecetasSection />} />
+          <PublicRoute strict path="/recetas/:id" component={() => <SingleRecetaViewSection />} />
           <PublicRoute path="/ingredients" component={() => <IngredientsSection />} />
           <PublicRoute path="/login" component={() => <Login handleLogin={handleLogin} />} />
           <PublicRoute path="*" component={() => <NotMatch />} />

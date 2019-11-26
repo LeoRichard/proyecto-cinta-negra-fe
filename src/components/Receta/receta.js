@@ -3,6 +3,7 @@ import AddFavorite from '../Favorites/favoritesRegister';
 import DeleteFavorite from '../Favorites/favoritesDelete';
 import RemoveReceta from '../Receta/recetaRemove';
 import Fade from 'react-reveal/Zoom';
+import { Link } from "react-router-dom";
 
 const Receta = ({ recetaid, name, difficulty, content, author, profileImage, featuredImage, isFavoriteSection, isUserRecetas }) => {
   return (
@@ -14,9 +15,9 @@ const Receta = ({ recetaid, name, difficulty, content, author, profileImage, fea
           <div className="tags absolute"><a href="/" className="tag-link-7">{difficulty}</a></div>
         </div>
         <div className="card-body gradient-effect">
-          <a href="/">
+          <Link to={`/recetas/${recetaid}`} className="">
             <h5 className="card-title">{name}</h5>
-          </a>
+          </Link>
           <p className="card-text">{content}</p>
         </div>
         <div className="card-footer author-meta">
